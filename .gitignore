@@ -1,0 +1,22 @@
+# ===== .NET =====
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# ===== Logs & runtime =====
+src/SERVER/logging/
+src/SERVER/svlogs/
+src/SERVER/tradelogs/
+
+# ===== Docker =====
+mysql_data/
+
+# ===== OS / Editor =====
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ===== Secrets (nếu có) =====
+.env

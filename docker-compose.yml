@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  nro-server:
+    build: .
+    container_name: nro_server
+    working_dir: /app
+    ports:
+      - "14445:14445"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    container_name: nro_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
