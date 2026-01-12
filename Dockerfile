@@ -1,18 +1,12 @@
-# Build stage
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-
-COPY src/SERVER/NRO_Server.csproj ./SERVER/
-RUN dotnet restore SERVER/NRO_Server.csproj
-
-COPY src/SERVER ./SERVER
-WORKDIR /src/SERVER
-RUN dotnet publish -c Release -o /app
-
-# Runtime stage
-FROM mcr.microsoft.com/dotnet/runtime:5.0
+FROM mcr.microsoft.com/dotnet/sdk:5.0
 WORKDIR /app
-COPY --from=build /app .
+
+COPY src/SERVER ./
+RUN dotnet build -c Debug
+RUN cp config.json bin/Debug/net5.0/
+
+# Copy RES folder to the build output directory
+RUN cp -r RES bin/Debug/net5.0/
 
 EXPOSE 14445
-ENTRYPOINT ["dotnet", "NRO_Server.dll"]
+CMD ["sh", "-c", "sleep 10 && dotnet bin/Debug/net5.0/NRO_Server.dll"]

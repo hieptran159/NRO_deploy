@@ -6,7 +6,8 @@
 -- Thời gian đã tạo: Th4 12, 2023 lúc 02:24 CH
 -- Phiên bản máy phục vụ: 5.7.17-log
 -- Phiên bản PHP: 5.6.30
-
+CREATE DATABASE IF NOT EXISTS real_data;
+USE real_data;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 

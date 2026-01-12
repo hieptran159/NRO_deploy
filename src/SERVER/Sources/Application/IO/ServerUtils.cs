@@ -17,8 +17,10 @@ namespace NRO_Server.Application.IO
     {
         public static string ProjectDir(string path)
         {
-            return $"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."))}/{path}";
+            var baseDir = AppContext.BaseDirectory;
+            return Path.GetFullPath(Path.Combine(baseDir, path));
         }
+
         private static readonly DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 00, DateTimeKind.Utc);
 
         public static byte[] ConvertArraySByteToByte(sbyte[] data)
