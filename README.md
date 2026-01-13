@@ -3,3 +3,4 @@ docker exec -it nro_mysql mysql -uroot -p \n
 USE real_data; \n
 RENAME TABLE limitpower TO limitPower; \n
 docker restart nro_server \n
+\n ==> đã fix trong .sql
