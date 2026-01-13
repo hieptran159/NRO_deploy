@@ -2347,7 +2347,7 @@ INSERT INTO `level` (`id`, `gender`, `name`) VALUES
 -- Cấu trúc bảng cho bảng `limitpower`
 --
 
-CREATE TABLE `limitpower` (
+CREATE TABLE `limitPower` (
   `id` int(11) DEFAULT NULL,
   `data` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -2356,7 +2356,7 @@ CREATE TABLE `limitpower` (
 -- Đang đổ dữ liệu cho bảng `limitpower`
 --
 
-INSERT INTO `limitpower` (`id`, `data`) VALUES
+INSERT INTO `limitPower` (`id`, `data`) VALUES
 (0, '[{\"power\": 17999999999, \"damage\": 11000, \"hp\": 220000, \"ki\": 220000, \"def\": 550, \"crit\": 5}]'),
 (1, '[{\"power\": 19999999999, \"damage\": 12000, \"hp\": 240000, \"ki\": 240000, \"def\": 600, \"crit\": 6}]'),
 (2, '[{\"power\": 24999999999, \"damage\": 15000, \"hp\": 300000, \"ki\": 300000, \"def\": 700, \"crit\": 7}]'),
