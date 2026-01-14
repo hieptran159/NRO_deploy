@@ -44,5 +44,6 @@ echo "=== Kiểm tra phiên bản Docker và Compose ==="
 docker --version
 docker-compose --version
 
-echo "=== ✅ Cài đặt hoàn tất! ==="
-echo "👉 Hãy đăng xuất hoặc reboot để kích hoạt quyền docker group."
+echo "===  Cài đặt hoàn tất! ==="
+echo " Hãy đăng xuất hoặc reboot để kích hoạt quyền docker group."
+
